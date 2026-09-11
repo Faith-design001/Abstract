@@ -12,124 +12,99 @@
 <body class="board-page">
 
     <aside class="sidebar" id="sidebar">
-        <div class="sidebar-brand">Abstract</div>
+        <a href="index.html" class="sidebar-brand" data-label="Back to site">
+            <span class="brand-mark">A</span>
+            <span class="sidebar-brand-text">Abstract</span>
+        </a>
         <nav class="sidebar-nav">
-            <a href="#" class="sidebar-link active">Dashboard</a>
-            <a href="#" class="sidebar-link">Orders</a>
-            <a href="#" class="sidebar-link">Customers</a>
-            <a href="#" class="sidebar-link">Reports</a>
-            <a href="#" class="sidebar-link">Settings</a>
+            <a href="#/dashboard" class="sidebar-link active" data-route="dashboard" data-label="Dashboard">
+                <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>
+                <span class="sidebar-link-text">Dashboard</span>
+            </a>
+            <a href="#/orders" class="sidebar-link" data-route="orders" data-label="Orders">
+                <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M9 12h6"/><path d="M9 16h4"/></svg>
+                <span class="sidebar-link-text">Orders</span>
+            </a>
+            <a href="#/customers" class="sidebar-link" data-route="customers" data-label="Customers">
+                <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <span class="sidebar-link-text">Customers</span>
+            </a>
+            <a href="#/reports" class="sidebar-link" data-route="reports" data-label="Reports">
+                <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                <span class="sidebar-link-text">Reports</span>
+            </a>
+            <a href="#/settings" class="sidebar-link" data-route="settings" data-label="Settings">
+                <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                <span class="sidebar-link-text">Settings</span>
+            </a>
         </nav>
+        <div class="sidebar-footer">
+            <button type="button" class="sidebar-collapse" id="sidebarCollapseBtn" data-label="Collapse sidebar">
+                <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+                <span class="sidebar-link-text">Collapse</span>
+            </button>
+        </div>
     </aside>
 
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-    <div class="main-content">
-        <header class="main-header">
-            <div class="header-left">
-                <button class="mobile-menu-btn" id="mobileMenuBtn">
-                    <span></span><span></span><span></span>
-                </button>
-                <div>
-                    <h1 class="header-title">Overview</h1>
-                    <p class="header-subtitle">Here's what is happening with your orders.</p>
-                </div>
-            </div>
-            <div class="header-right">
-                <input type="text" id="searchInput" class="search-input" placeholder="Search orders...">
-            </div>
-        </header>
+    <main class="main-content" id="page"></main>
 
-        <div class="summary-strip">
-            <div class="summary-card">
-                <div class="summary-card-header">
-                    <span class="summary-card-label">Orders today</span>
-                    <span class="summary-card-badge today">Today</span>
-                </div>
-                <div class="summary-card-number today-count" id="todayCount">0</div>
-            </div>
-            <div class="summary-card">
-                <div class="summary-card-header">
-                    <span class="summary-card-label">Unpaid</span>
-                    <span class="summary-card-badge unpaid">Attention</span>
-                </div>
-                <div class="summary-card-number unpaid-count" id="unpaidCount">0</div>
-            </div>
-            <div class="summary-card">
-                <div class="summary-card-header">
-                    <span class="summary-card-label">Overdue</span>
-                    <span class="summary-card-badge overdue">Attention</span>
-                </div>
-                <div class="summary-card-number overdue-count" id="overdueCount">0</div>
-            </div>
-        </div>
-
-        <div class="orders-section">
-            <div class="orders-header">
-                <h2 class="orders-title">Orders</h2>
-                <button class="btn-primary add-order-btn" id="addOrderBtn">+ Add order</button>
-            </div>
-
-            <div class="filters-section">
-                <div class="filter-row" id="paymentStatusFilters">
-                    <button type="button" class="filter-btn active" data-value="all">All</button>
-                    <button type="button" class="filter-btn" data-value="Unpaid">Unpaid</button>
-                    <button type="button" class="filter-btn" data-value="Paid">Paid</button>
-                </div>
-            </div>
-
-            <div class="orders-empty" id="ordersEmpty">
-                <p class="orders-empty-title">No orders yet</p>
-                <p class="orders-empty-desc">Add your first order to start tracking it here.</p>
-                <button class="btn-primary" id="emptyAddOrderBtn">+ Add order</button>
-            </div>
-
-            <div class="order-board" id="orderBoard">
-                <div class="board-column" data-status="New">
-                    <div class="column-header section-new">
-                        <span class="column-title">New</span>
-                        <span class="column-count">(0)</span>
-                    </div>
-                    <div class="column-body"></div>
-                </div>
-                <div class="board-column" data-status="Preparing">
-                    <div class="column-header section-preparing">
-                        <span class="column-title">Preparing</span>
-                        <span class="column-count">(0)</span>
-                    </div>
-                    <div class="column-body"></div>
-                </div>
-                <div class="board-column" data-status="Ready">
-                    <div class="column-header section-ready">
-                        <span class="column-title">Ready</span>
-                        <span class="column-count">(0)</span>
-                    </div>
-                    <div class="column-body"></div>
-                </div>
-                <div class="board-column" data-status="Delivered">
-                    <div class="column-header section-delivered">
-                        <span class="column-title">Delivered</span>
-                        <span class="column-count">(0)</span>
-                    </div>
-                    <div class="column-body"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-overlay" id="orderModalOverlay">
         <div class="modal">
             <div class="modal-header">
-                <h3 class="modal-title">Add order</h3>
-                <button class="modal-close" id="modalClose">&times;</button>
+                <h3 class="modal-title" id="orderModalTitle">Add order</h3>
+                <button type="button" class="modal-close" data-action="close-order-modal">&times;</button>
             </div>
             <form id="orderForm" class="order-form">
                 <input type="text" id="customerName" class="form-input" placeholder="Customer name" required>
                 <input type="text" id="orderDescription" class="form-input" placeholder="e.g. 2 dresses" required>
-                <input type="number" id="orderAmount" class="form-input" placeholder="e.g. 40000" required min="0">
+                <input type="number" id="orderAmount" class="form-input" placeholder="e.g. 40000" required min="0" step="any">
+                <div class="form-row-two">
+                    <select id="orderStatus" class="form-input">
+                        <option value="New">New</option>
+                        <option value="Preparing">Preparing</option>
+                        <option value="Ready">Ready</option>
+                        <option value="Delivered">Delivered</option>
+                    </select>
+                    <select id="paymentStatus" class="form-input">
+                        <option value="Unpaid">Unpaid</option>
+                        <option value="Paid">Paid</option>
+                    </select>
+                </div>
                 <input type="date" id="dueDate" class="form-input">
                 <button type="submit" class="btn-primary">Add order</button>
             </form>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="customerModalOverlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title" id="customerModalTitle">Add customer</h3>
+                <button type="button" class="modal-close" data-action="close-customer-modal">&times;</button>
+            </div>
+            <form id="customerForm" class="order-form">
+                <input type="text" id="customerNameField" class="form-input" placeholder="Customer name" required>
+                <input type="email" id="customerEmail" class="form-input" placeholder="Email (optional)">
+                <input type="tel" id="customerPhone" class="form-input" placeholder="Phone (optional)">
+                <input type="text" id="customerNotes" class="form-input" placeholder="Notes (optional)">
+                <button type="submit" class="btn-primary">Save customer</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="confirmOverlay">
+        <div class="modal modal-confirm">
+            <div class="modal-header">
+                <h3 class="modal-title">Are you sure?</h3>
+                <button type="button" class="modal-close" data-action="confirm-no">&times;</button>
+            </div>
+            <div class="modal-body" id="confirmMessage"></div>
+            <div class="modal-footer">
+                <button type="button" class="filter-btn" data-action="confirm-no">Cancel</button>
+                <button type="button" class="btn-primary btn-danger-confirm" data-action="confirm-yes">Confirm</button>
+            </div>
         </div>
     </div>
 
