@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abstract</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="board-page">
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-brand">Abstract</div>
+        <nav class="sidebar-nav">
+            <a href="#" class="sidebar-link active">Dashboard</a>
+            <a href="#" class="sidebar-link">Orders</a>
+            <a href="#" class="sidebar-link">Customers</a>
+            <a href="#" class="sidebar-link">Reports</a>
+            <a href="#" class="sidebar-link">Settings</a>
+        </nav>
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <div class="main-content">
+        <header class="main-header">
+            <div class="header-left">
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span><span></span><span></span>
+                </button>
+                <div>
+                    <h1 class="header-title">Overview</h1>
+                    <p class="header-subtitle">Here's what is happening with your orders.</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search orders...">
+            </div>
+        </header>
+
+        <div class="summary-strip">
+            <div class="summary-card">
+                <div class="summary-card-header">
+                    <span class="summary-card-label">Orders today</span>
+                    <span class="summary-card-badge today">Today</span>
+                </div>
+                <div class="summary-card-number today-count" id="todayCount">0</div>
+            </div>
+            <div class="summary-card">
+                <div class="summary-card-header">
+                    <span class="summary-card-label">Unpaid</span>
+                    <span class="summary-card-badge unpaid">Attention</span>
+                </div>
+                <div class="summary-card-number unpaid-count" id="unpaidCount">0</div>
+            </div>
+            <div class="summary-card">
+                <div class="summary-card-header">
+                    <span class="summary-card-label">Overdue</span>
+                    <span class="summary-card-badge overdue">Attention</span>
+                </div>
+                <div class="summary-card-number overdue-count" id="overdueCount">0</div>
+            </div>
+        </div>
+
+        <div class="orders-section">
+            <div class="orders-header">
+                <h2 class="orders-title">Orders</h2>
+                <button class="btn-primary add-order-btn" id="addOrderBtn">+ Add order</button>
+            </div>
+
+            <div class="filters-section">
+                <div class="filter-row" id="paymentStatusFilters">
+                    <button type="button" class="filter-btn active" data-value="all">All</button>
+                    <button type="button" class="filter-btn" data-value="Unpaid">Unpaid</button>
+                    <button type="button" class="filter-btn" data-value="Paid">Paid</button>
+                </div>
+            </div>
+
+            <div class="orders-empty" id="ordersEmpty">
+                <p class="orders-empty-title">No orders yet</p>
+                <p class="orders-empty-desc">Add your first order to start tracking it here.</p>
+                <button class="btn-primary" id="emptyAddOrderBtn">+ Add order</button>
+            </div>
+
+            <div class="order-board" id="orderBoard">
+                <div class="board-column" data-status="New">
+                    <div class="column-header section-new">
+                        <span class="column-title">New</span>
+                        <span class="column-count">(0)</span>
+                    </div>
+                    <div class="column-body"></div>
+                </div>
+                <div class="board-column" data-status="Preparing">
+                    <div class="column-header section-preparing">
+                        <span class="column-title">Preparing</span>
+                        <span class="column-count">(0)</span>
+                    </div>
+                    <div class="column-body"></div>
+                </div>
+                <div class="board-column" data-status="Ready">
+                    <div class="column-header section-ready">
+                        <span class="column-title">Ready</span>
+                        <span class="column-count">(0)</span>
+                    </div>
+                    <div class="column-body"></div>
+                </div>
+                <div class="board-column" data-status="Delivered">
+                    <div class="column-header section-delivered">
+                        <span class="column-title">Delivered</span>
+                        <span class="column-count">(0)</span>
+                    </div>
+                    <div class="column-body"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title">Add order</h3>
+                <button class="modal-close" id="modalClose">&times;</button>
+            </div>
+            <form id="orderForm" class="order-form">
+                <input type="text" id="customerName" class="form-input" placeholder="Customer name" required>
+                <input type="text" id="orderDescription" class="form-input" placeholder="e.g. 2 dresses" required>
+                <input type="number" id="orderAmount" class="form-input" placeholder="e.g. 40000" required min="0">
+                <input type="date" id="dueDate" class="form-input">
+                <button type="submit" class="btn-primary">Add order</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
